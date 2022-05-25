@@ -2,6 +2,9 @@
 /// <reference types="react" />
 /// <reference types="react-dom" />
 
+import '@mui/material/styles';
+import '@mui/material/Typography';
+
 declare namespace NodeJS {
   interface ProcessEnv {
     readonly NODE_ENV: 'development' | 'production' | 'test';
@@ -40,16 +43,16 @@ declare module '*.png' {
 }
 
 declare module '*.webp' {
-    const src: string;
-    export default src;
+  const src: string;
+  export default src;
 }
 
 declare module '*.svg' {
   import * as React from 'react';
 
-  export const ReactComponent: React.FunctionComponent<React.SVGProps<
-    SVGSVGElement
-  > & { title?: string }>;
+  export const ReactComponent: React.FunctionComponent<
+    React.SVGProps<SVGSVGElement> & { title?: string }
+  >;
 
   const src: string;
   export default src;
@@ -68,4 +71,31 @@ declare module '*.module.scss' {
 declare module '*.module.sass' {
   const classes: { readonly [key: string]: string };
   export default classes;
+}
+
+declare module '@mui/material/styles' {
+  export interface TypographyVariants {
+    Title: React.CSSProperties;
+    Subtitle: React.CSSProperties;
+    Read: React.CSSProperties;
+    Caption: React.CSSProperties;
+  }
+
+  // allow configuration using `createTheme`
+  export interface TypographyVariantsOptions {
+    Title?: React.CSSProperties;
+    Subtitle?: React.CSSProperties;
+    Read?: React.CSSProperties;
+    Caption?: React.CSSProperties;
+  }
+}
+
+// Update the Typography's variant prop options
+declare module '@mui/material/Typography' {
+  interface TypographyPropsVariantOverrides {
+    Title: true;
+    Subtitle: true;
+    Read: true;
+    Caption: true;
+  }
 }
