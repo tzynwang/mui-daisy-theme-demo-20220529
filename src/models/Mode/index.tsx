@@ -4,7 +4,7 @@ import { deepmerge } from '@mui/utils';
 import basicTheme from '@Theme/Basic';
 import createModeContext from '@Tools/create-mode-context';
 import firstLetterUpperCase from '@Tools/first-letter-upper-case';
-import type { ThemeKeys, ThemePool, MuiThemeOptions, MuiTheme } from './types';
+import type { ThemeKeys, ThemePool, ThemeModule, MuiTheme } from './types';
 
 const THEME_KEYS: ThemeKeys[] = ['cupcake', 'coffee'];
 
@@ -16,13 +16,13 @@ class Mode {
   private init(): void {
     for (const key of THEME_KEYS) {
       const themeKey = key as ThemeKeys;
-      const toMergedTheme: {
-        default: MuiThemeOptions;
-      } = require(`@Theme/${firstLetterUpperCase(themeKey)}`);
+      const themeModule: ThemeModule = require(`@Theme/${firstLetterUpperCase(
+        themeKey
+      )}`);
 
       this.themePool.push({
         key: themeKey,
-        theme: createTheme(deepmerge(basicTheme, toMergedTheme.default))
+        theme: createTheme(deepmerge(basicTheme, themeModule.default))
       });
     }
   }
