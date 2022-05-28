@@ -16,13 +16,13 @@ class Mode {
   private init(): void {
     for (const key of THEME_KEYS) {
       const themeKey = key as ThemeKeys;
-      const toMergedTheme: ThemeModule = require(`@Theme/${firstLetterUpperCase(
+      const themeModule: ThemeModule = require(`@Theme/${firstLetterUpperCase(
         themeKey
       )}`);
 
       this.themePool.push({
         key: themeKey,
-        theme: createTheme(deepmerge(basicTheme, toMergedTheme.default))
+        theme: createTheme(deepmerge(basicTheme, themeModule.default))
       });
     }
   }
