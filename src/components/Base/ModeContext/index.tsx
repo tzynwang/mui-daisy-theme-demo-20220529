@@ -1,8 +1,5 @@
-import { createContext, Dispatch, SetStateAction } from 'react';
+import createModeContext from '@Tools/create-mode-context';
 
-const ModeContext = createContext<null | {
-  mode: any;
-  setMode: Dispatch<SetStateAction<any>>;
-}>(null);
+const ModeContext = createModeContext<'cupcake' | 'coffee'>();
 
 export default ModeContext;
