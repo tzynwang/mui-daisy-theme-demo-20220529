@@ -11,7 +11,7 @@ import type { ThemeKeys } from './types';
 
 function App(): React.ReactElement {
   /* States */
-  const [themeName, setThemeName] = useState<ThemeKeys>('cupcake');
+  const [themeName, setThemeName] = useState<ThemeKeys>('coffee');
   const [dynamicTheme, setDynamicTheme] = useState<Theme>(Mode.getTheme(themeName));
 
   /* Hooks */
