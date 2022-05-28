@@ -14,17 +14,16 @@ class Mode {
   public themePool: ThemePool = [];
 
   private init(): void {
-    for (const key of THEME_KEYS) {
+    this.themePool = THEME_KEYS.map((key) => {
       const themeKey = key as ThemeKeys;
       const themeModule: ThemeModule = require(`@Theme/${firstLetterUpperCase(
         themeKey
       )}`);
-
-      this.themePool.push({
+      return {
         key: themeKey,
         theme: createTheme(deepmerge(basicTheme, themeModule.default))
-      });
-    }
+      };
+    });
   }
 
   constructor() {
