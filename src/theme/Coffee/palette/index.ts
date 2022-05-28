@@ -19,7 +19,7 @@ const palette = {
       main: '#FFD260'
     },
     text: {
-      primary: '#746D63CC',
+      primary: '#746D63',
       secondary: '#746D63CC'
     },
     background: {
