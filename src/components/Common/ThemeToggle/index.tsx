@@ -11,16 +11,17 @@ function ThemeToggle(): React.ReactElement {
 
   /* Functions */
   const handleThemeToggle = (): void => {
-    context?.setMode((prev) => (prev === 'light' ? 'dark' : 'light'));
+    const currentMode = context?.mode as 'cupcake' | 'coffee';
+    context?.setMode(currentMode === 'cupcake' ? 'coffee' : 'cupcake');
   };
 
   /* Main */
   return (
     <Grid container alignItems="center" spacing={2}>
-      <Grid item>Current theme: {context ? context.mode : null}</Grid>
       <Grid item>
         <Button onClick={handleThemeToggle}>change theme</Button>
       </Grid>
+      <Grid item>Current theme: {context ? context.mode : null}</Grid>
     </Grid>
   );
 }

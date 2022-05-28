@@ -1,4 +1,4 @@
-export default {
+const typography = {
   typography: {
     fontFamily: ['"Noto Sans TC"', 'sans-serif'].join(','),
     h1: {
@@ -33,25 +33,25 @@ export default {
       fontFamily: ['"Noto Sans TC"', 'sans-serif'].join(','),
       fontWeight: 700,
       fontSize: '16px',
-      lineHeight: '32px',
+      lineHeight: '32px'
     },
     Subtitle: {
       fontFamily: ['"Noto Sans TC"', 'sans-serif'].join(','),
       fontWeight: 700,
       fontSize: '14px',
-      lineHeight: '20px',
+      lineHeight: '20px'
     },
     Read: {
       fontFamily: ['"Noto Sans TC"', 'sans-serif'].join(','),
       fontWeight: 400,
       fontSize: '20px',
-      lineHeight: '36px',
+      lineHeight: '36px'
     },
     Caption: {
       fontFamily: ['"Noto Sans TC"', 'sans-serif'].join(','),
       fontWeight: 400,
       fontSize: '14px',
-      lineHeight: '18px',
+      lineHeight: '18px'
     },
     button: {
       fontFamily: ['"Noto Sans TC"', 'sans-serif'].join(','),
@@ -62,3 +62,5 @@ export default {
     }
   }
 };
+
+export default typography;

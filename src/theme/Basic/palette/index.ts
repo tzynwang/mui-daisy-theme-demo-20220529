@@ -1,4 +1,4 @@
-export default {
+const palette = {
   palette: {
     primary: {
       main: '#095CA8'
@@ -17,7 +17,8 @@ export default {
       2: '#CBCCCD',
       3: '#BDBDBD',
       4: '#96989C'
-    },
-
+    }
   }
 };
+
+export default palette;

@@ -1,21 +1,30 @@
 import React, { useState, useEffect } from 'react';
 
+import { deepmerge } from '@mui/utils';
 import { ThemeProvider, createTheme, Theme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
 import ModeContext from '@Components/Base/ModeContext';
 import ThemeToggle from '@Components/Common/ThemeToggle';
 import TypographyDemo from '@Components/Common/TypographyDemo';
-import theme from '@Theme/index';
+import basicTheme from '@Theme/Basic';
+import cupcakeTheme from '@Theme/Cupcake';
+import coffeeTheme from '@Theme/Coffee';
+
+const mergedCupcakeTheme = deepmerge(basicTheme, cupcakeTheme);
+const mergedCoffeeTheme = deepmerge(basicTheme, coffeeTheme);
 
 function App(): React.ReactElement {
   /* States */
-  const [mode, setMode] = useState<'light' | 'dark'>('dark');
-  const [dynamicTheme, setDynamicTheme] = useState<Theme>(createTheme(theme));
+  const [mode, setMode] = useState<'cupcake' | 'coffee'>('cupcake');
+  const [dynamicTheme, setDynamicTheme] = useState<Theme>(
+    createTheme({ ...mergedCupcakeTheme })
+  );
 
   /* Hooks */
   useEffect(() => {
-    setDynamicTheme(createTheme({ ...theme, palette: { mode } }));
+    const newTheme = mode === 'coffee' ? mergedCoffeeTheme : mergedCupcakeTheme;
+    setDynamicTheme(createTheme({ ...newTheme }));
   }, [mode]);
 
   /* Main */
