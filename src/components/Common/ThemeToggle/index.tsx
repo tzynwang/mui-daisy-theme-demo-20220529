@@ -15,7 +15,7 @@ function ThemeToggle(): React.ReactElement {
   /* Functions */
   const handleThemeChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
     const key = e.target.value as ThemeKeys;
-    context?.setMode(key);
+    context?.setThemeName(key);
   };
 
   /* Main */
@@ -45,7 +45,7 @@ function ThemeToggle(): React.ReactElement {
         </Box>
       </Grid>
       <Grid item xs={6} sm={9}>
-        Current theme: {context ? context.mode : null}
+        Current theme: {context ? context.themeName : null}
       </Grid>
     </Grid>
   );

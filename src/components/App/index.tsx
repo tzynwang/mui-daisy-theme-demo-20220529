@@ -11,17 +11,17 @@ import type { ThemeKeys } from './types';
 
 function App(): React.ReactElement {
   /* States */
-  const [mode, setMode] = useState<ThemeKeys>('cupcake');
-  const [dynamicTheme, setDynamicTheme] = useState<Theme>(Mode.getTheme(mode));
+  const [themeName, setThemeName] = useState<ThemeKeys>('cupcake');
+  const [dynamicTheme, setDynamicTheme] = useState<Theme>(Mode.getTheme(themeName));
 
   /* Hooks */
   useEffect(() => {
-    setDynamicTheme(Mode.getTheme(mode));
-  }, [mode]);
+    setDynamicTheme(Mode.getTheme(themeName));
+  }, [themeName]);
 
   /* Main */
   return (
-    <ModeContext.Provider value={{ mode, setMode }}>
+    <ModeContext.Provider value={{ themeName, setThemeName }}>
       <ThemeProvider theme={dynamicTheme}>
         <CssBaseline />
         <TypographyDemo />

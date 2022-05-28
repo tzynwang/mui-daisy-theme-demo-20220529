@@ -1,12 +1,12 @@
 import { createContext, Context, Dispatch, SetStateAction } from 'react';
 
 function createModeContext<T>(): Context<{
-  mode: T;
-  setMode: Dispatch<SetStateAction<T>>;
+  themeName: T;
+  setThemeName: Dispatch<SetStateAction<T>>;
 } | null> {
   return createContext<null | {
-    mode: T;
-    setMode: Dispatch<SetStateAction<T>>;
+    themeName: T;
+    setThemeName: Dispatch<SetStateAction<T>>;
   }>(null);
 }
 
