@@ -6,7 +6,7 @@ import createModeContext from '@Tools/create-mode-context';
 import firstLetterUpperCase from '@Tools/first-letter-upper-case';
 import type { ThemeKeys, ThemePool, ThemeModule, MuiTheme } from './types';
 
-const THEME_KEYS: ThemeKeys[] = ['cupcake', 'coffee'];
+export const THEME_KEYS: ThemeKeys[] = ['cupcake', 'coffee', 'retro'];
 
 export const ModeContext = createModeContext<ThemeKeys>();
 
