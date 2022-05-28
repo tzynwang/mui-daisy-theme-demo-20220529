@@ -1,5 +1,5 @@
 import React, { memo, useContext } from 'react';
-import { ModeContext } from '@Components/App';
+import ModeContext from '@Components/Base/ModeContext';
 
 function ThemeToggle(): React.ReactElement {
   const context = useContext(ModeContext);
