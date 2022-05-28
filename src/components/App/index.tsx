@@ -1,20 +1,10 @@
-import React, {
-  createContext,
-  useState,
-  useEffect,
-  Dispatch,
-  SetStateAction
-} from 'react';
+import React, { useState, useEffect } from 'react';
 import { ThemeProvider, createTheme, Theme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Typography from '@mui/material/Typography';
 import theme from '@Theme/index';
 import ThemeToggle from '@Components/ThemeToggle';
-
-export const ModeContext = createContext<null | {
-  mode: 'light' | 'dark';
-  setMode: Dispatch<SetStateAction<'light' | 'dark'>>;
-}>(null);
+import ModeContext from '@Components/Base/ModeContext';
 
 function App(): React.ReactElement {
   const [mode, setMode] = useState<'light' | 'dark'>('light');
