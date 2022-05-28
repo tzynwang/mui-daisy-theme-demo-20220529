@@ -9,13 +9,16 @@ import ThemeToggle from '@Components/Common/ThemeToggle';
 import theme from '@Theme/index';
 
 function App(): React.ReactElement {
+  /* States */
   const [mode, setMode] = useState<'light' | 'dark'>('light');
   const [dynamicTheme, setDynamicTheme] = useState<Theme>(createTheme(theme));
 
+  /* Hooks */
   useEffect(() => {
     setDynamicTheme(createTheme({ ...theme, palette: { mode } }));
   }, [mode]);
 
+  /* Main */
   return (
     <ModeContext.Provider value={{ mode, setMode }}>
       <ThemeProvider theme={dynamicTheme}>

@@ -2,8 +2,10 @@ import React, { memo, useContext } from 'react';
 import ModeContext from '@Components/Base/ModeContext';
 
 function ThemeToggle(): React.ReactElement {
+  /* States */
   const context = useContext(ModeContext);
 
+  /* Main */
   return (
     <div>
       Current theme: {context ? context.mode : null}
