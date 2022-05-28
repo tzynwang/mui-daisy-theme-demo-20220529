@@ -33,7 +33,7 @@ class Mode {
 
   public getTheme(key: ThemeKeys): MuiTheme {
     const find = this.themePool.find((t) => t.key === key);
-    if (!find) return this.themePool[0]?.theme || createTheme(basicTheme);
+    if (!find) return createTheme(); // fallback to default @mui theme
     return find.theme;
   }
 }
