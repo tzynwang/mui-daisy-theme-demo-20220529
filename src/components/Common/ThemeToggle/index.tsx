@@ -3,7 +3,8 @@ import React, { memo, useContext } from 'react';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 
-import ModeContext from '@Components/Base/ModeContext';
+import { ModeContext } from '@Models/Mode';
+import type { ThemeKeys } from './types';
 
 function ThemeToggle(): React.ReactElement {
   /* States */
@@ -11,7 +12,7 @@ function ThemeToggle(): React.ReactElement {
 
   /* Functions */
   const handleThemeToggle = (): void => {
-    const currentMode = context?.mode as 'cupcake' | 'coffee';
+    const currentMode = context?.mode as ThemeKeys;
     context?.setMode(currentMode === 'cupcake' ? 'coffee' : 'cupcake');
   };
 
