@@ -6,7 +6,7 @@ import createModeContext from '@Tools/create-mode-context';
 import firstLetterUpperCase from '@Tools/first-letter-upper-case';
 import type { ThemeKeys, ThemePool, ThemeModule, MuiTheme } from './types';
 
-export const THEME_KEYS: ThemeKeys[] = ['cupcake', 'coffee', 'retro'];
+export const THEME_KEYS = ['coffee', 'cupcake', 'retro'] as const;
 
 export const ModeContext = createModeContext<ThemeKeys>();
 
@@ -15,12 +15,11 @@ class Mode {
 
   private init(): void {
     this.themePool = THEME_KEYS.map((key) => {
-      const themeKey = key as ThemeKeys;
       const themeModule: ThemeModule = require(`@Theme/${firstLetterUpperCase(
-        themeKey
+        key
       )}`);
       return {
-        key: themeKey,
+        key,
         theme: createTheme(deepmerge(basicTheme, themeModule.default))
       };
     });
