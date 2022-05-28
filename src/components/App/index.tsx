@@ -6,7 +6,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import ModeContext from '@Components/Base/ModeContext';
 import ThemeToggle from '@Components/Common/ThemeToggle';
 import TypographyDemo from '@Components/Common/TypographyDemo';
-import theme from '@Theme/index';
+import theme from '@Theme/Basic';
 
 function App(): React.ReactElement {
   /* States */
