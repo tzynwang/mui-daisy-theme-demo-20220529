@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/mui-daisy-theme-demo-20220529/static/css/main.a57fef23.css",
+    "main.js": "/mui-daisy-theme-demo-20220529/static/js/main.09d72981.js",
+    "static/js/787.bb113df4.chunk.js": "/mui-daisy-theme-demo-20220529/static/js/787.bb113df4.chunk.js",
+    "index.html": "/mui-daisy-theme-demo-20220529/index.html",
+    "main.09d72981.js.map": "/mui-daisy-theme-demo-20220529/static/js/main.09d72981.js.map",
+    "787.bb113df4.chunk.js.map": "/mui-daisy-theme-demo-20220529/static/js/787.bb113df4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a57fef23.css",
+    "static/js/main.09d72981.js"
+  ]
+}
