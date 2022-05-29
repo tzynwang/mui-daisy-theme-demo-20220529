@@ -2,15 +2,15 @@ import { createTheme } from '@mui/material/styles';
 import { deepmerge } from '@mui/utils';
 
 import basicTheme from '@Theme/Basic';
-import createModeContext from '@Tools/create-mode-context';
+import createThemeContext from '@Tools/create-theme-context';
 import firstLetterUpperCase from '@Tools/first-letter-upper-case';
 import type { ThemeKeys, ThemePool, ThemeModule, MuiTheme } from './types';
 
 export const THEME_KEYS = ['coffee', 'cupcake', 'retro'] as const;
 
-export const ModeContext = createModeContext<ThemeKeys>();
+export const ThemeContext = createThemeContext<ThemeKeys>();
 
-class Mode {
+class Theme {
   public themePool: ThemePool = [];
 
   private init(): void {
@@ -36,4 +36,4 @@ class Mode {
   }
 }
 
-export default new Mode();
+export default new Theme();

@@ -1,1 +1,1 @@
-export type { ThemeKeys } from '@Models/Mode/types';
+export type { ThemeKeys } from '@Models/Theme/types';

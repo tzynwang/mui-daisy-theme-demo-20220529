@@ -1,4 +1,4 @@
-import { THEME_KEYS } from '@Models/Mode';
+import { THEME_KEYS } from '@Models/Theme';
 import type { ThemeOptions } from '@mui/system';
 import type { Theme as MuiTheme } from '@mui/material/styles';
 

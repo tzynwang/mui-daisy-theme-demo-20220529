@@ -1,33 +1,35 @@
 import React, { useState, useEffect } from 'react';
 
-import { ThemeProvider, Theme } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
 import ThemeToggle from '@Components/Common/ThemeToggle';
 import TypographyDemo from '@Components/Common/TypographyDemo';
 
-import Mode, { ModeContext } from '@Models/Mode';
-import type { ThemeKeys } from './types';
+import Theme, { ThemeContext } from '@Models/Theme';
+import type { ThemeKeys, MuiTheme } from './types';
 
 function App(): React.ReactElement {
   /* States */
   const [themeName, setThemeName] = useState<ThemeKeys>('coffee');
-  const [dynamicTheme, setDynamicTheme] = useState<Theme>(Mode.getTheme(themeName));
+  const [dynamicTheme, setDynamicTheme] = useState<MuiTheme>(
+    Theme.getTheme(themeName)
+  );
 
   /* Hooks */
   useEffect(() => {
-    setDynamicTheme(Mode.getTheme(themeName));
+    setDynamicTheme(Theme.getTheme(themeName));
   }, [themeName]);
 
   /* Main */
   return (
-    <ModeContext.Provider value={{ themeName, setThemeName }}>
+    <ThemeContext.Provider value={{ themeName, setThemeName }}>
       <ThemeProvider theme={dynamicTheme}>
         <CssBaseline />
         <TypographyDemo />
         <ThemeToggle />
       </ThemeProvider>
-    </ModeContext.Provider>
+    </ThemeContext.Provider>
   );
 }
 

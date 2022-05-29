@@ -1,6 +1,6 @@
 import { createContext, Context, Dispatch, SetStateAction } from 'react';
 
-function createModeContext<T>(): Context<{
+function createThemeContext<T>(): Context<{
   themeName: T;
   setThemeName: Dispatch<SetStateAction<T>>;
 } | null> {
@@ -10,4 +10,4 @@ function createModeContext<T>(): Context<{
   }>(null);
 }
 
-export default createModeContext;
+export default createThemeContext;
