@@ -1,1 +1,1 @@
-export type ModeKeys = 'light' | 'dark';
+export type ModeKeys = 'light' | 'dark' | null;

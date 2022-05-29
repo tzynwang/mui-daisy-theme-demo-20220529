@@ -13,13 +13,24 @@ import type { ModeKeys, ThemeKeys, MuiTheme } from './types';
 
 function App(): React.ReactElement {
   /* States */
-  const [mode, setMode] = useState<ModeKeys>('dark');
+  const [mode, setMode] = useState<ModeKeys>(null);
   const [themeName, setThemeName] = useState<ThemeKeys>('coffee');
   const [dynamicTheme, setDynamicTheme] = useState<MuiTheme>(
     Theme.getTheme(themeName)
   );
 
   /* Hooks */
+  useEffect(() => {
+    setMode(dynamicTheme.palette.mode);
+  }, [dynamicTheme]);
+  useEffect(() => {
+    if (mode) {
+      setDynamicTheme((prev) => ({
+        ...prev,
+        palette: { ...prev.palette, mode }
+      }));
+    }
+  }, [mode]);
   useEffect(() => {
     setDynamicTheme(Theme.getTheme(themeName));
   }, [themeName]);
