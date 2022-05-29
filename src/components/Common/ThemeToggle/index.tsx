@@ -5,17 +5,17 @@ import Grid from '@mui/material/Grid';
 import InputLabel from '@mui/material/InputLabel';
 import NativeSelect from '@mui/material/NativeSelect';
 
-import { ModeContext, THEME_KEYS } from '@Models/Mode';
+import { ThemeContext, THEME_KEYS } from '@Models/Theme';
 import type { ThemeKeys } from './types';
 
 function ThemeToggle(): React.ReactElement {
   /* States */
-  const context = useContext(ModeContext);
+  const context = useContext(ThemeContext);
 
   /* Functions */
   const handleThemeChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
     const key = e.target.value as ThemeKeys;
-    context?.setMode(key);
+    context?.setThemeName(key);
   };
 
   /* Main */
@@ -45,7 +45,7 @@ function ThemeToggle(): React.ReactElement {
         </Box>
       </Grid>
       <Grid item xs={6} sm={9}>
-        Current theme: {context ? context.mode : null}
+        Current theme: {context ? context.themeName : null}
       </Grid>
     </Grid>
   );

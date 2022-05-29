@@ -1,5 +1,6 @@
 const palette = {
   palette: {
+    mode: 'light',
     primary: {
       main: '#EF9994',
       contrastText: '#282425'
