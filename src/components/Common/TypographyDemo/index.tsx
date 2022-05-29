@@ -1,10 +1,11 @@
 import React from 'react';
+import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
 function TypographyDemo(): React.ReactElement {
   /* Main */
   return (
-    <React.Fragment>
+    <Box p={2}>
       <Typography variant="h1">h1</Typography>
       <Typography variant="h2">h2</Typography>
       <Typography variant="h3">h3</Typography>
@@ -15,7 +16,7 @@ function TypographyDemo(): React.ReactElement {
         voluptatum tenetur aspernatur sit praesentium quasi placeat aliquid
         minus odio sequi est, non nisi. Consectetur, dolores?
       </Typography>
-    </React.Fragment>
+    </Box>
   );
 }
 
